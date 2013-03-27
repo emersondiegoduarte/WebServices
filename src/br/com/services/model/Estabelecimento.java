@@ -1,37 +1,20 @@
 package br.com.services.model;
 
-import java.io.Serializable;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.xml.bind.annotation.XmlRootElement;
-
-
-@XmlRootElement
-@Entity
-public class Estabelecimento implements Serializable {
+public class Estabelecimento {
 	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -7397147416765609798L;
-
-	@Id
-	@GeneratedValue
-	private Long id;
+	private String id;
 	
 	private String nome;
 	
 	private String cnpj;
 	
-	//private Endereco endereco;
+	private Endereco endereco;
 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -51,13 +34,13 @@ public class Estabelecimento implements Serializable {
 		this.cnpj = cnpj;
 	}
 
-//	public Endereco getEndereco() {
-//		return endereco;
-//	}
-//
-//	public void setEndereco(Endereco endereco) {
-//		this.endereco = endereco;
-//	}
+	public Endereco getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
 
 	@Override
 	public int hashCode() {
