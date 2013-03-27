@@ -24,36 +24,21 @@ public class EstabelecimetoDaoImpl  {
 	}
 
 	public Estabelecimento getEstabelecimentoPorId(int id) {
-		Estabelecimento estabelecimento = entityManager.find(Estabelecimento.class, id);
-		return estabelecimento;
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	
 	public String adicionarEstabelecimento(Estabelecimento estabelecimento) {
-		try {
-			//Nesse ponto é necessário a realização das transações, ficando a cargo do CDI. No momento a transação está manual.
-			entityManager.getTransaction().begin();
-			entityManager.persist(estabelecimento);
-			entityManager.getTransaction().commit();
-			entityManager.flush();
-		} catch (Exception e) {
-			entityManager.getTransaction().rollback();
-			return "Problema ao adicionar Estabelecimento";
-		}
-		return "Estabelecimento Adicionado";	}
+		return null;
+		// TODO Auto-generated method stub
+		
+	}
 
 	public String atualizarEstabelecimento(Estabelecimento estabelecimento) {
-		try {
-			//Nesse ponto é necessário a realização das transações, ficando a cargo do CDI. No momento a transação está manual.
-			entityManager.getTransaction().begin();
-			entityManager.persist(estabelecimento);
-			entityManager.getTransaction().commit();
-			entityManager.flush();
-		} catch (Exception e) {
-			entityManager.getTransaction().rollback();
-			return "Problema ao adicionar estabelecimento";
-		}
-		return "Estabelecimento Modificado";		
+		return null;
+		// TODO Auto-generated method stub
+		
 	}
 
 }
