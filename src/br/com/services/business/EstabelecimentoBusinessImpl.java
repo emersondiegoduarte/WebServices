@@ -17,7 +17,7 @@ public class EstabelecimentoBusinessImpl  {
 	
 	public List<Estabelecimento> getEstabelecimentos() {
 		return estabelecimentoDAO.getEstabelecimentos();
-	}
+	} 
 
 	
 	public Estabelecimento getEstabelecimentoPorId(int id) {
