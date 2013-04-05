@@ -7,8 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Origem implements Serializable{
-	
+public class Origem implements Serializable {
+
 	/**
 	 * 
 	 */
@@ -17,9 +17,9 @@ public class Origem implements Serializable{
 	@Id
 	@GeneratedValue
 	private Long id;
-	
+
 	private String idRedeSocial;
-	
+
 	private String nome;
 
 	public Long getId() {
@@ -70,7 +70,5 @@ public class Origem implements Serializable{
 			return false;
 		return true;
 	}
-	
-	
 
 }
