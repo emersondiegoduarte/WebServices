@@ -17,25 +17,28 @@ import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "TB_USUARIO")
-public class Usuario implements Serializable {
+public class Usuario implements Serializable{
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -7522193326298094398L;
 
+
 	@Id
 	@GeneratedValue
 	private Long id;
 
+	
 	private String nome;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dataCadastro;
 
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinTable(name = "USUARIO_ORIGEM", joinColumns = @JoinColumn(name = "USUARIO_ID"), inverseJoinColumns = @JoinColumn(name = "ORIGEM_ID"))
-	private Collection<Origem> origens;
+	@JoinTable(name="USUARIO_ORIGEM", joinColumns=@JoinColumn(name="USUARIO_ID"), 
+	inverseJoinColumns=@JoinColumn(name="ORIGEM_ID"))
+	private Collection<Origem>  origens;
 
 	public Long getId() {
 		return id;
@@ -44,6 +47,7 @@ public class Usuario implements Serializable {
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 
 	public String getNome() {
 		return nome;
@@ -60,6 +64,8 @@ public class Usuario implements Serializable {
 	public void setDataCadastro(Date dataCadastro) {
 		this.dataCadastro = dataCadastro;
 	}
+
+
 
 	public Collection<Origem> getOrigens() {
 		return origens;
@@ -93,5 +99,7 @@ public class Usuario implements Serializable {
 			return false;
 		return true;
 	}
+	
+	
 
 }

@@ -2,14 +2,15 @@ package br.com.services.model;
 
 public class Endereco {
 
+	
 	private Integer endereco;
-
+	
 	private String rua;
-
+	
 	private String cep;
-
+	
 	private Integer numero;
-
+	
 	private Integer telefone;
 
 	public Integer getEndereco() {
@@ -77,5 +78,8 @@ public class Endereco {
 			return false;
 		return true;
 	}
-
+	
+	
+	
+	
 }

@@ -2,7 +2,6 @@ package br.com.services.resources;
 
 import java.util.List;
 
-import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -14,11 +13,15 @@ import javax.ws.rs.Produces;
 import br.com.services.business.EstabelecimentoBusinessImpl;
 import br.com.services.model.Estabelecimento;
 
+import com.sun.jersey.api.core.InjectParam;
+
 @Path("/estabelecimento")
 public class EstabelecimentoResource {
-
-	@Inject
+	
+	@InjectParam
 	private EstabelecimentoBusinessImpl estabelecimentoBusiness;
+	
+	
 
 	@GET
 	@Produces("application/json")
@@ -50,5 +53,6 @@ public class EstabelecimentoResource {
 		estabelecimentoBusiness.atualizarEstabelecimento(estabelecimento);
 		return "OK";
 	}
+
 
 }

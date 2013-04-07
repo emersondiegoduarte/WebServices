@@ -7,15 +7,16 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import br.com.services.model.Estabelecimento;
+import br.com.services.util.JPAUtil;
 
-public class EstabelecimetoDaoImpl {
-
+public class EstabelecimetoDaoImpl  {
+	
 	public EstabelecimetoDaoImpl() {
 		// TODO Auto-generated constructor stub
 	}
-
+	
 	@Inject
-	private EntityManager entityManager;
+	private EntityManager entityManager = JPAUtil.criaEntityManager();
 
 	public List<Estabelecimento> getEstabelecimentos() {
 		Query query = entityManager.createQuery("select e from Estabelecimento e");
@@ -28,10 +29,10 @@ public class EstabelecimetoDaoImpl {
 		return estabelecimento;
 	}
 
+	
 	public String adicionarEstabelecimento(Estabelecimento estabelecimento) {
 		try {
-			// Nesse ponto ï¿½ necessï¿½rio a realizaï¿½ï¿½o das transaï¿½ï¿½es, ficando a
-			// cargo do CDI. No momento a transaï¿½ï¿½o estï¿½ manual.
+			//Nesse ponto  necess‡rio a realiza‹o das transa›es, ficando a cargo do CDI. No momento a transa‹o est‡ manual.
 			entityManager.getTransaction().begin();
 			entityManager.persist(estabelecimento);
 			entityManager.getTransaction().commit();
@@ -40,13 +41,11 @@ public class EstabelecimetoDaoImpl {
 			entityManager.getTransaction().rollback();
 			return "Problema ao adicionar Estabelecimento";
 		}
-		return "Estabelecimento Adicionado";
-	}
+		return "Estabelecimento Adicionado";	}
 
 	public String atualizarEstabelecimento(Estabelecimento estabelecimento) {
 		try {
-			// Nesse ponto ï¿½ necessï¿½rio a realizaï¿½ï¿½o das transaï¿½ï¿½es, ficando a
-			// cargo do CDI. No momento a transaï¿½ï¿½o estï¿½ manual.
+			//Nesse ponto  necess‡rio a realiza‹o das transa›es, ficando a cargo do CDI. No momento a transa‹o est‡ manual.
 			entityManager.getTransaction().begin();
 			entityManager.persist(estabelecimento);
 			entityManager.getTransaction().commit();
@@ -55,7 +54,7 @@ public class EstabelecimetoDaoImpl {
 			entityManager.getTransaction().rollback();
 			return "Problema ao adicionar estabelecimento";
 		}
-		return "Estabelecimento Modificado";
+		return "Estabelecimento Modificado";		
 	}
 
 }

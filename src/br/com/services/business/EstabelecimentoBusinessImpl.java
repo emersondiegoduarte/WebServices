@@ -10,7 +10,7 @@ import br.com.services.model.Estabelecimento;
 public class EstabelecimentoBusinessImpl  {
 
 	@Inject
-	private EstabelecimetoDaoImpl estabelecimentoDAO;
+	private EstabelecimetoDaoImpl estabelecimentoDAO = new EstabelecimetoDaoImpl();
 
 	
 
