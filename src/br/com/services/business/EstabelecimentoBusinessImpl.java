@@ -11,6 +11,10 @@ public class EstabelecimentoBusinessImpl  {
 
 	@Inject
 	private EstabelecimetoDaoImpl estabelecimentoDAO;
+	
+	public EstabelecimentoBusinessImpl() {
+		// TODO Auto-generated constructor stub
+	}
 
 	
 
