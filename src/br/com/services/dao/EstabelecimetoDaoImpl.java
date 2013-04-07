@@ -7,7 +7,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import br.com.services.model.Estabelecimento;
-import br.com.services.util.JPAUtil;
 
 public class EstabelecimetoDaoImpl {
 
@@ -16,7 +15,7 @@ public class EstabelecimetoDaoImpl {
 	}
 
 	@Inject
-	private EntityManager entityManager = JPAUtil.criaEntityManager();
+	private EntityManager entityManager;
 
 	public List<Estabelecimento> getEstabelecimentos() {
 		Query query = entityManager.createQuery("select e from Estabelecimento e");
