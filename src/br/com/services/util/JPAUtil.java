@@ -18,8 +18,8 @@ public class JPAUtil {
 		return factory.createEntityManager();
 	}
 
-	public void finaliza(@Disposes EntityManager manager) {
-		manager.close();
-	}
+//	public void finaliza(@Disposes EntityManager manager) {
+//		manager.close();
+//	}
 
 }
